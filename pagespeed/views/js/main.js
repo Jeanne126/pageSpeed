@@ -490,7 +490,7 @@ function updatePositions() {
   var items = document.querySelectorAll('.mover');
   var phase = Math.sin((document.body.scrollTop / 1250) + ((items.length-1)% 5));
   for (var i = 0; i < items.length; i++) {   
-    items[i].style.left =items[i].basicLeft+ 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
   // 再次使用User Timing API。这很值得学习
