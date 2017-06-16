@@ -441,10 +441,6 @@ changePizzaSizes(size);
     for (var i = 0; i < randomPizzas.length; i++) {     
       randomPizzas[i].style.width = newWidth + "%";
     } 
-
-//resizePizzas(size);
-
-
   // User Timing API 太棒了
   window.performance.mark("mark_end_resize");
   window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
@@ -489,12 +485,11 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  var phase = (document.body.scrollTop / 1250) + (items.length-1) % 5;
+  var phase = document.body.scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
-    var phase1 = Math.sin(phase);
+    var phase1 = Math.sin(phase+ i % 5);
     items[i].style.left = items[i].basicLeft + 100 * phase1 + 'px';
   }
-
   // 再次使用User Timing API。这很值得学习
   // 能够很容易地自定义测量维度
   window.performance.mark("mark_end_frame");
