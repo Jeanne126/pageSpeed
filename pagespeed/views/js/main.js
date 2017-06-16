@@ -450,7 +450,7 @@ var resizePizzas = function(size) {
     }
  
 
-  changePizzaSizes(size);
+  //changePizzaSizes(size);
 
 
 
