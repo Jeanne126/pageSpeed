@@ -417,11 +417,6 @@ var resizePizzas = function(size) {
   }
    changeSliderLabel(size);
 
- 
-
-  
-
-
     // TODO: change to 3 sizes? no more xl?
     // Changes the slider value to a percent width
     function changePizzaSizes (size) {
@@ -498,10 +493,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  var phase1 = document.body.scrollTop / 1250 + (items.length-1) % 5;
+  var phase = document.body.scrollTop / 1250 + (items.length-1) % 5;
   for (var i = 0; i < items.length; i++) {
-    var phase=Math.sin(phase1);
-    items[i].style.left=items[i].basicLeft + 100 * phase + 'px';
+    var aPhase=Math.sin(phase);
+    items[i].style.left=items[i].basicLeft + 100 * aPhase + 'px';
   }
 
   // 再次使用User Timing API。这很值得学习
