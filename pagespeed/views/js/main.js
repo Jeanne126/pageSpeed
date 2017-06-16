@@ -441,9 +441,8 @@ changePizzaSizes(size);
     for (var i = 0; i < randomPizzas.length; i++) {     
       randomPizzas[i].style.width = newWidth+"%";
     } 
- 
-  
-
+ };
+resizePizzas(size);
 
 
   // User Timing API 太棒了
@@ -451,8 +450,7 @@ changePizzaSizes(size);
   window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
   var timeToResize = window.performance.getEntriesByName("measure_pizza_resize");
   console.log("Time to resize pizzas: " + timeToResize[timeToResize.length-1].duration + "ms");
-};
-resizePizzas(size);
+
 
 window.performance.mark("mark_start_generating"); // 收集timing数据
 
