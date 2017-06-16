@@ -423,19 +423,19 @@ var resizePizzas = function(size) {
       switch(size) {
         case "1":
           newWidth=25;
-          return;
+          break;
         case "2":
           newWidth=33.3;
-          return;
+          break;
         case "3":
           newWidth=50;
-          return;
+          break;
         default:
           console.log("bug in sizeSwitcher");
       }
     }
 
-changePizzaSizes(size);
+
 
   // 遍历披萨的元素并改变它们的宽度
  
@@ -444,7 +444,7 @@ changePizzaSizes(size);
       randomPizzas[i].style.width = newWidth+"%";
     }
  
-
+ changePizzaSizes(size);
   resizePizzas(size);
 
 
