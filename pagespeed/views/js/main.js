@@ -439,10 +439,10 @@ changePizzaSizes(size);
  
     var randomPizzas=document.getElementsByClassName("randomPizzaContainer");
     for (var i = 0; i < randomPizzas.length; i++) {     
-      randomPizzas[i].style.width = newWidth+"%";
+      randomPizzas[i].style.width = newWidth + "%";
     } 
  }
-
+resizePizzas(size);
 
 
   // User Timing API 太棒了
@@ -450,7 +450,7 @@ changePizzaSizes(size);
   window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
   var timeToResize = window.performance.getEntriesByName("measure_pizza_resize");
   console.log("Time to resize pizzas: " + timeToResize[timeToResize.length-1].duration + "ms");
-resizePizzas(size);
+
 
 window.performance.mark("mark_start_generating"); // 收集timing数据
 
@@ -491,8 +491,8 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
   var phase = (document.body.scrollTop / 1250) + (items.length-1) % 5;
   for (var i = 0; i < items.length; i++) {
-    var aPhase = Math.sin(phase);
-    items[i].style.left = items[i].basicLeft + 100 * aPhase + 'px';
+    var phase1 = Math.sin(phase);
+    items[i].style.left = items[i].basicLeft + 100 * phase1 + 'px';
   }
 
   // 再次使用User Timing API。这很值得学习
