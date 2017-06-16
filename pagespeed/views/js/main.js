@@ -439,11 +439,11 @@ changePizzaSizes(size);
  
     var randomPizzas=document.getElementsByClassName("randomPizzaContainer");
     for (var i = 0; i < randomPizzas.length; i++) {     
-      randomPizzas[i].style.width = newWidth+"%";
+      randomPizzas[i].style.width = newWidth+"%"
     } 
  }
-resizePizzas(size);
 
+resizePizzas(size);
 
   // User Timing API 太棒了
   window.performance.mark("mark_end_resize");
@@ -489,10 +489,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  var phase = document.body.scrollTop / 1250 + (items.length-1) % 5;
+  var phase = document.body.scrollTop / 1250 + items.length % 5;
   for (var i = 0; i < items.length; i++) {
     var aPhase=Math.sin(phase);
-    items[i].style.left=items[i].basicLeft + 100 * aPhase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * aPhase + 'px';
   }
 
   // 再次使用User Timing API。这很值得学习
