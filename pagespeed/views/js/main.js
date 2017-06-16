@@ -451,7 +451,7 @@ var resizePizzas = function(size) {
     var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';
     for (var i = 0; i < randomPizzas.length; i++) {
          
-      randomPizzas[i].style.width = newwidth;
+      randomPizzas[i].style.width = newwidth+"%";
     }
   }
 
