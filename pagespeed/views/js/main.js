@@ -400,10 +400,6 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API 函数
 
   // 改变滑窗前披萨的尺寸值
-    function determineDx (elem, size) {
-    var oldwidth = elem.offsetWidth;
-    var windowwidth = document.getElementById("randomPizzas").offsetWidth;
-    var oldsize = oldwidth / windowwidth;
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -419,17 +415,19 @@ var resizePizzas = function(size) {
         console.log("bug in changeSliderLabel");
     }
   }
+   changeSliderLabel(size);
 
-  changeSliderLabel(size);
-    var newsize = sizeSwitcher(size);
-    var dx = (newsize - oldsize) * windowwidth;
+ 
 
-    return dx;
-    }
+  
    // 返回不同的尺寸以将披萨元素由一个尺寸改成另一个尺寸。由changePizzaSlices(size)函数调用
+  function determineDx (elem, size) {
+    var oldwidth = elem.offsetWidth;
+    var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
+    var oldsize = oldwidth / windowwidth;
 
-
-    // 将值转成百分比宽度
+    // TODO: change to 3 sizes? no more xl?
+    // Changes the slider value to a percent width
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
@@ -443,6 +441,11 @@ var resizePizzas = function(size) {
       }
     }
 
+    var newsize = sizeSwitcher(size);
+    var dx = (newsize - oldsize) * windowwidth;
+
+    return dx;
+  }
 
   // 遍历披萨的元素并改变它们的宽度
   function changePizzaSizes(size) {
