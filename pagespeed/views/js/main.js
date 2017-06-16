@@ -439,7 +439,7 @@ var resizePizzas = function(size) {
           console.log("bug in sizeSwitcher");
       }
     }
-
+}
 
 
   // 遍历披萨的元素并改变它们的宽度
@@ -452,7 +452,7 @@ var resizePizzas = function(size) {
 
   changePizzaSizes(size);
 
-}
+
 
   // User Timing API 太棒了
   window.performance.mark("mark_end_resize");
