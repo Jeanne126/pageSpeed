@@ -435,7 +435,7 @@ var resizePizzas = function(size) {
       }
     }
 
-
+changePizzaSizes(size);
 
   // 遍历披萨的元素并改变它们的宽度
  
