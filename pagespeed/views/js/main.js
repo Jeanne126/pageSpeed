@@ -441,7 +441,7 @@ changePizzaSizes(size);
     for (var i = 0; i < randomPizzas.length; i++) {     
       randomPizzas[i].style.width = newWidth+"%";
     } 
- };
+ }
 resizePizzas(size);
 
 
