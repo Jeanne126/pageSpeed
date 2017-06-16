@@ -442,7 +442,7 @@ changePizzaSizes(size);
       randomPizzas[i].style.width = newWidth + "%";
     } 
  }
-resizePizzas(size);
+//resizePizzas(size);
 
 
   // User Timing API 太棒了
