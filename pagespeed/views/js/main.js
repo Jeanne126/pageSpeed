@@ -396,7 +396,7 @@ var pizzaElementGenerator = function(i) {
 };
 
 // 当网站中"Our Pizzas"的滑窗部分移动时调用resizePizzas(size)函数
-var resizePizzas = function(size) {
+var resizePizzas = function() {
   window.performance.mark("mark_start_resize");   // User Timing API 函数
 
   // 改变滑窗前披萨的尺寸值
@@ -445,7 +445,7 @@ changePizzaSizes(size);
     }
  
 
-  resizePizzas(size);
+  resizePizzas();
 
 
 
